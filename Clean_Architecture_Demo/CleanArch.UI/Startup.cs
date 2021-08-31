@@ -1,4 +1,5 @@
 using CleanArch.Data;
+using CleanArch.InfraStructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,7 @@ namespace CleanArch.UI
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
+            services.RegisterServices();
 
             //services.AddDatabaseDeveloperPageExceptionFilter();
             //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -66,5 +68,7 @@ namespace CleanArch.UI
                 endpoints.MapRazorPages();
             });
         }
+
+      
     }
 }
