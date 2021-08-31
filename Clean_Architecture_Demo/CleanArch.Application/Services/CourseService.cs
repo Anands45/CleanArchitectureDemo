@@ -1,6 +1,6 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
-using CleanArch.Domain.Interfaces;
+using CleanArch.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +19,12 @@ namespace CleanArch.Application.Services
             _courseRepository = courseRepository;
         }
 
-        public IEnumerable<CourseViewModel> GetCourses()
+        public async Task<CourseViewModel> GetCourses()
         {
-            throw new NotImplementedException();
+            return new CourseViewModel()
+            {
+                Courses = await _courseRepository.GetCourses()
+            };
         }
     }
 }
