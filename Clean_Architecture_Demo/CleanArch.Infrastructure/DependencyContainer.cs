@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace CleanArch.InfraStructure
 {
-    public static class DependencyContainer
+    public class DependencyContainer
     {
-        public static void RegisterServices(this IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services)
         {
             // Application Layer
             services.AddTransient<ICourseService, CourseService>();
