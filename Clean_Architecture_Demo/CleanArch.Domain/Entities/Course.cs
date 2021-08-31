@@ -14,6 +14,6 @@ namespace CleanArch.Domain.Entities
 
         public string Description { get; set; }
 
-        public string ImagUrl { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
